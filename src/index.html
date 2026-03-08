@@ -38,12 +38,12 @@
   renderer="maxCanvasWidth: 960; maxCanvasHeight: 960"
   xrface="mirroredDisplay: true;  maxDetections:3; meshGeometry: eyes, face, mouth; cameraDirection: front; allowedDevices: any;">
   <a-assets>
-    <a-asset-item id="head-occluder" src="assets/Models/head-occluder.glb"></a-asset-item>
-    <a-asset-item id="glasses" src="assets/Models/stereo-glasses.glb"></a-asset-item>
+    <a-asset-item id="head-occluder" src="./assets/Models/head-occluder.glb"></a-asset-item>
+    <a-asset-item id="glasses" src="./assets/Models/stereo-glasses.glb"></a-asset-item>
   </a-assets>
 
-  <xrextras-resource id="tat-t" src="assets/Textures/8-tat.png"></xrextras-resource>
-  <xrextras-resource id="alpha" src="assets/Alpha/soft-eyes-mouth.png"></xrextras-resource>
+  <xrextras-resource id="tat-t" src="./assets/Textures/8-tat.png"></xrextras-resource>
+  <xrextras-resource id="alpha" src="./assets/Alpha/soft-eyes-mouth.png"> </xrextras-resource>
   <xrextras-basic-material
     id="tattoo"
     tex="#tat-t"
@@ -145,7 +145,7 @@
     </xrextras-face-attachment>
   </xrextras-faceanchor>
 
-  <a-light type="directional" position="0 1.8 3" intensity="0.8"></a-light>
+  <a-light type="directional" target="#face" position="0 1.8 3" intensity="0.8"></a-light>
   <a-light type="ambient" intensity="0.8"></a-light>
 </a-scene>
 
