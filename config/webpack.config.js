@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
 
 const rootPath = process.cwd()
 const distPath = path.join(rootPath, 'dist')
@@ -67,13 +66,6 @@ const makeDefaultHtmlLoader = () => ({
             type: 'src',
           })),
         ],
-        // external/ 配下の script は require せずそのまま出力（Terser がパースできずエラーになるため）
-        urlFilter: (attribute, value) => {
-          if (attribute === 'src' && typeof value === 'string' && /external\//.test(value)) {
-            return false
-          }
-          return true
-        },
       },
     },
   },
@@ -128,13 +120,6 @@ const config = {
   },
   mode: 'production',
   context: srcPath,
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        exclude: /external\//,
-      }),
-    ],
-  },
   devServer: {
     open: false,
     compress: true,
