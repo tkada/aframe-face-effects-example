@@ -1,4 +1,5 @@
 # A-Frame: Face Effects
+[日本語](README_JP.md)
 
 Get started with 8th Wall Face Effects! This A-Frame example attaches 3D glasses to the detected 
 face and applies a tattoo to the generated face mesh.
@@ -14,15 +15,15 @@ face and applies a tattoo to the generated face mesh.
 5. To connect to a mobile device, follow [these instructions](https://8th.io/test-on-mobile)
 6. Recommended: Track your files using [git](https://git-scm.com/about) to avoid losing progress
 
-### GitHub Pages へのデプロイ
+### Deploying to GitHub Pages
 
-`main` ブランチへ push すると、GitHub Actions でビルドされ GitHub Pages に自動デプロイされます。
+Pushing to the `main` branch triggers a build via GitHub Actions and automatically deploys to GitHub Pages.
 
-1. リポジトリの **Settings** → **Pages** を開く
-2. **Build and deployment** の **Source** で **GitHub Actions** を選択する
-3. `main` に push する（または Actions タブから「Deploy to GitHub Pages」ワークフローを手動実行）
+1. Open **Settings** → **Pages** in the repository
+2. Under **Build and deployment** → **Source**, select **GitHub Actions**
+3. Push to `main` (or manually run the "Deploy to GitHub Pages" workflow from the Actions tab)
 
-デプロイ後は `https://<ユーザー名>.github.io/<リポジトリ名>/` で公開されます。
+The site will be available at `https://<username>.github.io/<repository-name>/`.
 
 ## Questions?
 
