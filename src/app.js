@@ -5,6 +5,4 @@
 
 import './index.css'
 
-// Register custom A-Frame components in app.js before the scene in body.html has loaded.
-import {tapPlaceComponent} from './tap-place'
-AFRAME.registerComponent('tap-place', tapPlaceComponent)
+// Face Effects: no custom A-Frame components required; xrface and xrextras handle face tracking.
