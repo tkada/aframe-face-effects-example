@@ -41,15 +41,6 @@ jobs:
           PUBLIC_PATH: /${{ github.event.repository.name }}/
         run: npm run build
 
-      - name: Archive dist
-        run: zip -r dist.zip dist
-
-      - name: Upload dist zip
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist-archive
-          path: dist.zip
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
