@@ -61,7 +61,6 @@ const makeDefaultHtmlLoader = () => ({
             type: 'src',
             filter: () => false,
           },
-          { tag: 'base', attribute: 'href', type: 'src', filter: () => false },
           ...ATTRIBUTES_TO_EXPAND.map(attr => ({
             tag: '*',
             attribute: attr,
@@ -83,19 +82,6 @@ const makeDefaultHtmlLoader = () => ({
 // GitHub Pages などサブパスで配信する場合は PUBLIC_PATH を設定（例: /repo-name/）
 const publicPath = process.env.PUBLIC_PATH || '/'
 
-// index.html の __PUBLIC_PATH__ を実際の publicPath に置換（<base href> 用）
-function replacePublicPathInHtml(compiler, publicPath) {
-  compiler.hooks.compilation.tap('ReplacePublicPathPlugin', (compilation) => {
-    HtmlWebpackPlugin.getCompilationHooks(compilation).beforeEmit.tapPromise(
-      'ReplacePublicPathPlugin',
-      (data) => Promise.resolve({
-        ...data,
-        html: data.html.replace(/__PUBLIC_PATH__/g, publicPath),
-      })
-    )
-  })
-}
-
 const config = {
   entry: path.join(srcPath, 'app.js'),
   output: {
@@ -109,7 +95,6 @@ const config = {
       filename: 'index.html',
       inject: false,
     }),
-    { apply: (c) => replacePublicPathInHtml(c, publicPath) },
     new CopyWebpackPlugin({
       patterns: [
         {
