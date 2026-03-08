@@ -3,6 +3,7 @@
 
 Get started with 8th Wall Face Effects! This A-Frame example attaches 3D glasses to the detected 
 face and applies a tattoo to the generated face mesh.
+[Demo](https://tkada.github.io/aframe-face-effects-example/)
 
 ![](https://media.giphy.com/media/PmjHEktbE2BVSkuHgN/giphy.gif)
 

@@ -2,6 +2,7 @@
 [English](README.md)
 
 8th Wall Face Effects を使ってみましょう。この A-Frame サンプルでは、検出した顔に 3D メガネを装着し、生成されたフェイスメッシュにタトゥーを適用します。
+[デモ](https://tkada.github.io/aframe-face-effects-example/)
 
 ![](https://media.giphy.com/media/PmjHEktbE2BVSkuHgN/giphy.gif)
 
