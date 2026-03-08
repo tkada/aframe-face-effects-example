@@ -14,6 +14,16 @@ face and applies a tattoo to the generated face mesh.
 5. To connect to a mobile device, follow [these instructions](https://8th.io/test-on-mobile)
 6. Recommended: Track your files using [git](https://git-scm.com/about) to avoid losing progress
 
+### GitHub Pages へのデプロイ
+
+`main` ブランチへ push すると、GitHub Actions でビルドされ GitHub Pages に自動デプロイされます。
+
+1. リポジトリの **Settings** → **Pages** を開く
+2. **Build and deployment** の **Source** で **GitHub Actions** を選択する
+3. `main` に push する（または Actions タブから「Deploy to GitHub Pages」ワークフローを手動実行）
+
+デプロイ後は `https://<ユーザー名>.github.io/<リポジトリ名>/` で公開されます。
+
 ## Questions?
 
 Please raise any questions on [Github Discussions](https://github.com/orgs/8thwall/discussions) or join the [Discord](https://8th.io/discord) to connect with the community.

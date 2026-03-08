@@ -71,12 +71,15 @@ const makeDefaultHtmlLoader = () => ({
   },
 })
 
+// GitHub Pages などサブパスで配信する場合は PUBLIC_PATH を設定（例: /repo-name/）
+const publicPath = process.env.PUBLIC_PATH || '/'
+
 const config = {
   entry: path.join(srcPath, 'app.js'),
   output: {
     filename: 'bundle.js',
     path: distPath,
-    publicPath: '/',
+    publicPath,
   },
   plugins: [
     new HtmlWebpackPlugin({
